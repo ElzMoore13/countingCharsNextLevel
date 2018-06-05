@@ -5,7 +5,7 @@ function countLetters(aString){
 
   for(var i = 0; i < aString.length; i++){
     letter = aString[i];
-    if(Object.keys(uniqueLetters).includes(letter)){
+    if(letter in uniqueLetters){
       uniqueLetters[letter]["count"] += 1;
       uniqueLetters[letter]["index"].push(i);
     }
