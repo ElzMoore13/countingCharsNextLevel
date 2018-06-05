@@ -5,10 +5,13 @@ function countLetters(aString){
 
   for(var i = 0; i < aString.length; i++){
     letter = aString[i];
-    if(Object.keys(uniqueLetters).includes(letter))
-      uniqueLetters[letter] += 1;
-    else
-      uniqueLetters[letter] = 1;
+    if(Object.keys(uniqueLetters).includes(letter)){
+      uniqueLetters[letter]["count"] += 1;
+      uniqueLetters[letter]["index"].push(i);
+    }
+    else{
+      uniqueLetters[letter] = {"count": 1, "index": [i]}
+    }
 
   }
 
